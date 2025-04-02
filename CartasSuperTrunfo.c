@@ -7,8 +7,8 @@ void desafioNovato() {
     char codigoDaCidade[5] = "A000";
     char nome[32] = "";
     int populacao = 0;
-    int area = 0;
-    int pib = 0;
+    float area = 0;
+    float pib = 0;
     int pontosTuristicos = 0;
 
     // Solicita ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -22,10 +22,10 @@ void desafioNovato() {
     scanf("%d", &populacao);
 
     printf("Insira o tamanho da área da cidade:\n");
-    scanf("%d", &area);
+    scanf("%f", &area);
 
     printf("Insira o PIB da cidade:\n");
-    scanf("%d", &pib);
+    scanf("%f", &pib);
 
     printf("Insira o número de pontos turísticos da cidade:\n");
     scanf("%d", &pontosTuristicos);
@@ -34,8 +34,8 @@ void desafioNovato() {
     printf("Atributos da cidade '%s':\n", nome);
     printf("Código: %s\n", codigoDaCidade);
     printf("Tamanho da população: %d\n", populacao);
-    printf("Tamanho da área: %d\n", area);
-    printf("PIB: %d\n", pib);
+    printf("Tamanho da área: %f\n", area);
+    printf("PIB: %f\n", pib);
     printf("Total de pontos turísticos: %d\n", pontosTuristicos);
 }
 
@@ -44,8 +44,8 @@ void desafioAventureiro() {
     char codigoDaCidade[5] = "A000";
     char nome[32] = "";
     int populacao = 0;
-    int area = 0;
-    int pib = 0;
+    float area = 0;
+    float pib = 0;
     int pontosTuristicos = 0;
     float densidadePopulacional = 0.0;
     float pibPerCapita = 0.0;
@@ -61,36 +61,36 @@ void desafioAventureiro() {
     scanf("%d", &populacao);
 
     printf("Insira o tamanho da área da cidade:\n");
-    scanf("%d", &area);
+    scanf("%f", &area);
 
     printf("Insira o PIB da cidade:\n");
-    scanf("%d", &pib);
+    scanf("%f", &pib);
 
     printf("Insira o número de pontos turísticos da cidade:\n");
     scanf("%d", &pontosTuristicos);
 
     // Define as propriedades que precisam ser calculadas após termos todas as informações da cidade
-    densidadePopulacional = ((float)populacao / (float)area);
-    pibPerCapita = ((float)pib / (float)populacao);
+    densidadePopulacional = ((float)populacao / area);
+    pibPerCapita = (pib / (float)populacao);
 
     // Exibe os valores inseridos para cada atributo da cidade, um por linha.
     printf("Atributos da cidade '%s':\n", nome);
     printf("Código: %s\n", codigoDaCidade);
     printf("Tamanho da população: %d\n", populacao);
-    printf("Tamanho da área: %d\n", area);
+    printf("Tamanho da área: %f\n", area);
     printf("Total de pontos turísticos: %d\n", pontosTuristicos);
     printf("Densidade Populacional: %f\n", densidadePopulacional);
     printf("PIB per Capita: %f\n", pibPerCapita);
-    printf("PIB total: %d\n", pib);
+    printf("PIB total: %f\n", pib);
 }
 
-void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, int& populacao, int& area, int& pib, int& pontosTuristicos, float& densidadePopulacional, float& pibPerCapita, float& superPoder) {
+void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, int& populacao, float& area, float& pib, int& pontosTuristicos, float& densidadePopulacional, float& pibPerCapita, float& superPoder) {
     // Atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     //codigoDaCidade[5] = "A000";
     //nome = "";
     //int populacao = 0;
-    //int area = 0;
-    //int pib = 0;
+    //float area = 0;
+    //float pib = 0;
     //int pontosTuristicos = 0;
     //float densidadePopulacional = 0.0;
     //float pibPerCapita = 0.0;
@@ -107,18 +107,18 @@ void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, int& populacao, in
     scanf("%d", &populacao);
 
     printf("Insira o tamanho da área da cidade:\n");
-    scanf("%d", &area);
+    scanf("%f", &area);
 
     printf("Insira o PIB da cidade:\n");
-    scanf("%d", &pib);
+    scanf("%f", &pib);
 
     printf("Insira o número de pontos turísticos da cidade:\n");
     scanf("%d", &pontosTuristicos);
 
     // Define as propriedades que precisam ser calculadas após termos todas as informações da cidade
-    densidadePopulacional = ((float)populacao / (float)area);
-    pibPerCapita = ((float)pib / (float)populacao);
-    superPoder = densidadePopulacional + pibPerCapita + (float)pontosTuristicos + (float)area + (float)populacao + (float)pib;
+    densidadePopulacional = ((float)populacao / area);
+    pibPerCapita = (pib / (float)populacao);
+    superPoder = densidadePopulacional + pibPerCapita + (float)pontosTuristicos + area + (float)populacao + pib;
 }
 
 //Função válida para todas as propriedades, MENOS Densidade Populacional.
@@ -151,15 +151,15 @@ void desafioMestre() {
 
     char* codigoDaCidade = new char[5];
     char* nome = new char[32];
-    int populacao, area, pib, pontosTuristicos;
-    float densidadePopulacional, pibPerCapita, superPoder;
+    int populacao, pontosTuristicos;
+    float area, pib, densidadePopulacional, pibPerCapita, superPoder;
     printf("- Primeira cidade\n");
     perguntarDadosDaCidade(codigoDaCidade, nome, populacao, area, pib, pontosTuristicos, densidadePopulacional, pibPerCapita, superPoder);
 
     char* codigoDaCidade2 = new char[5];
     char* nome2 = new char[32];
-    int populacao2, area2, pib2, pontosTuristicos2;
-    float densidadePopulacional2, pibPerCapita2, superPoder2;
+    int populacao2, pontosTuristicos2;
+    float area2, pib2, densidadePopulacional2, pibPerCapita2, superPoder2;
     printf("- Segunda cidade\n");
     perguntarDadosDaCidade(codigoDaCidade2, nome2, populacao2, area2, pib2, pontosTuristicos2, densidadePopulacional2, pibPerCapita2, superPoder2);
 
