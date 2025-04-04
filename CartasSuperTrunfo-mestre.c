@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas (duas!! Conforme o README.md)
-void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int& populacao, float& area, float& pib, int& pontosTuristicos, float& densidadePopulacional, float& pibPerCapita, float& superPoder) {
+void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int* populacao, float* area, float* pib, int* pontosTuristicos, float* densidadePopulacional, float* pibPerCapita, float* superPoder) {
     // Atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     //codigoDaCidade[5] = "A000";
     //nome = "";
@@ -22,21 +23,25 @@ void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int&
     scanf("%s", nome);
 
     printf("Insira o tamanho da população da cidade:\n");
-    scanf("%lu", &populacao);
+    scanf("%lu", populacao);
 
     printf("Insira o tamanho da área da cidade:\n");
-    scanf("%f", &area);
+    scanf("%f", area);
 
     printf("Insira o PIB da cidade:\n");
-    scanf("%f", &pib);
+    scanf("%f", pib);
 
     printf("Insira o número de pontos turísticos da cidade:\n");
-    scanf("%d", &pontosTuristicos);
+    scanf("%d", pontosTuristicos);
 
     // Define as propriedades que precisam ser calculadas após termos todas as informações da cidade
-    densidadePopulacional = ((float)populacao / area);
-    pibPerCapita = (pib / (float)populacao);
-    superPoder = densidadePopulacional + pibPerCapita + (float)pontosTuristicos + area + (float)populacao + pib;
+    float novoDensidadePopulacional = ((float)*populacao / *area);
+    float novoPibPerCapita = (*pib / (float)*populacao);
+    float novoSuperPoder = (*densidadePopulacional + *pibPerCapita + (float)*pontosTuristicos + *area + (float)*populacao + *pib);
+
+    *densidadePopulacional = novoDensidadePopulacional;
+    *pibPerCapita = novoPibPerCapita;
+    *superPoder = novoSuperPoder;
 }
 
 //Função válida para comparar todas as propriedades, MENOS Densidade Populacional.
@@ -97,21 +102,21 @@ void compararDensidadePopulacionalEInformarCidadeGanhadora(const char* proprieda
 void desafioMestre() {
     printf("Iremos comparar duas cartas de cidades. Siga os procedimentos abaixo:\n");
 
-    char* codigoDaCidade = new char[5];
-    char* nome = new char[32];
+    char* codigoDaCidade = malloc(5);
+    char* nome = malloc(32);
     unsigned long int populacao;
     int pontosTuristicos;
     float area, pib, densidadePopulacional, pibPerCapita, superPoder;
     printf("- Primeira cidade\n");
-    perguntarDadosDaCidade(codigoDaCidade, nome, populacao, area, pib, pontosTuristicos, densidadePopulacional, pibPerCapita, superPoder);
+    perguntarDadosDaCidade(codigoDaCidade, nome, &populacao, &area, &pib, &pontosTuristicos, &densidadePopulacional, &pibPerCapita, &superPoder);
 
-    char* codigoDaCidade2 = new char[5];
-    char* nome2 = new char[32];
+    char* codigoDaCidade2 = malloc(5);
+    char* nome2 = malloc(32);
     unsigned long int populacao2;
     int pontosTuristicos2;
     float area2, pib2, densidadePopulacional2, pibPerCapita2, superPoder2;
     printf("- Segunda cidade\n");
-    perguntarDadosDaCidade(codigoDaCidade2, nome2, populacao2, area2, pib2, pontosTuristicos2, densidadePopulacional2, pibPerCapita2, superPoder2);
+    perguntarDadosDaCidade(codigoDaCidade2, nome2, &populacao2, &area2, &pib2, &pontosTuristicos2, &densidadePopulacional2, &pibPerCapita2, &superPoder2);
 
     // Exibe os valores inseridos para cada atributo da cidade, um por linha.
     printf("Resultado da comparação entre as cidades '%s' e '%s':\n", nome, nome2);
