@@ -4,17 +4,6 @@
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas (duas!! Conforme o README.md)
 void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int* populacao, float* area, float* pib, int* pontosTuristicos, float* densidadePopulacional, float* pibPerCapita, float* superPoder) {
-    // Atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    //codigoDaCidade[5] = "A000";
-    //nome = "";
-    //int populacao = 0;
-    //float area = 0;
-    //float pib = 0;
-    //int pontosTuristicos = 0;
-    //float densidadePopulacional = 0.0;
-    //float pibPerCapita = 0.0;
-    //float superPoder = 0.0;
-
     // Solicita ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     printf("Insira o código da cidade:\n");
     scanf("%s", codigoDaCidade);
@@ -104,17 +93,17 @@ void desafioMestre() {
 
     char* codigoDaCidade = malloc(5);
     char* nome = malloc(32);
-    unsigned long int populacao;
-    int pontosTuristicos;
-    float area, pib, densidadePopulacional, pibPerCapita, superPoder;
+    unsigned long int populacao = 0;
+    int pontosTuristicos = 0;
+    float area = 0, pib = 0, densidadePopulacional = 0, pibPerCapita = 0, superPoder = 0;
     printf("- Primeira cidade\n");
     perguntarDadosDaCidade(codigoDaCidade, nome, &populacao, &area, &pib, &pontosTuristicos, &densidadePopulacional, &pibPerCapita, &superPoder);
 
     char* codigoDaCidade2 = malloc(5);
     char* nome2 = malloc(32);
-    unsigned long int populacao2;
-    int pontosTuristicos2;
-    float area2, pib2, densidadePopulacional2, pibPerCapita2, superPoder2;
+    unsigned long int populacao2 = 0;
+    int pontosTuristicos2 = 0;
+    float area2 = 0, pib2 = 0, densidadePopulacional2 = 0, pibPerCapita2 = 0, superPoder2 = 0;
     printf("- Segunda cidade\n");
     perguntarDadosDaCidade(codigoDaCidade2, nome2, &populacao2, &area2, &pib2, &pontosTuristicos2, &densidadePopulacional2, &pibPerCapita2, &superPoder2);
 
