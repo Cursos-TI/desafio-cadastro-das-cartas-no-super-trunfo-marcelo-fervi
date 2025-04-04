@@ -29,7 +29,7 @@ void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int*
 
     // Para o cálculo do Super-poder, devemos considerar a Densidade populacional *invertida* ao fazer a soma de todos os atributos.
     float densidadePopulacionalInvertida = (1.0f / novoDensidadePopulacional);
-    float novoSuperPoder = (densidadePopulacionalInvertida + *pibPerCapita + (float)*pontosTuristicos + *area + (float)*populacao + *pib);
+    float novoSuperPoder = (densidadePopulacionalInvertida + novoPibPerCapita + (float)*pontosTuristicos + *area + (float)*populacao + *pib);
 
     *densidadePopulacional = novoDensidadePopulacional;
     *pibPerCapita = novoPibPerCapita;
