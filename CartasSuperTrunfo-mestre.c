@@ -48,13 +48,13 @@ void perguntarDadosDaCidade(char* codigoDaCidade, char* nome, unsigned long int*
 //Esta variante deve ser usada SOMENTE para variáveis do tipo INT32 (int).
 void compararPropriedadeGeralEInformarCidadeGanhadora_Int32(const char* propriedadeNome, int carta1Valor, int carta2Valor, char* carta1NomeDaCidade, char* carta2NomeDaCidade) {
     if (carta1Valor > carta2Valor) {
-        printf("%s: %d e %d (Vencedor: '%s'; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta1NomeDaCidade, carta1Valor);
+        printf("%s: %d e %d (Vencedor: '%s'; Valor: %d)\n", propriedadeNome, carta1Valor, carta2Valor, carta1NomeDaCidade, carta1Valor);
     }
     else if (carta2Valor > carta1Valor) {
-        printf("%s: %d e %d (Vencedor: '%s'; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta2NomeDaCidade, carta2Valor);
+        printf("%s: %d e %d (Vencedor: '%s'; Valor: %d)\n", propriedadeNome, carta1Valor, carta2Valor, carta2NomeDaCidade, carta2Valor);
     }
     else {
-        printf("%s: %d e %d (Vencedor: Empate; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta1Valor);
+        printf("%s: %d e %d (Vencedor: Empate; Valor: %d)\n", propriedadeNome, carta1Valor, carta2Valor, carta1Valor);
     }
 }
 
@@ -62,13 +62,13 @@ void compararPropriedadeGeralEInformarCidadeGanhadora_Int32(const char* propried
 //Esta variante deve ser usada SOMENTE para variáveis do tipo UINT64 (unsigned long int).
 void compararPropriedadeGeralEInformarCidadeGanhadora_UInt64(const char* propriedadeNome, unsigned long int carta1Valor, unsigned long int carta2Valor, char* carta1NomeDaCidade, char* carta2NomeDaCidade) {
     if (carta1Valor > carta2Valor) {
-        printf("%s: %lu e %lu (Vencedor: '%s'; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta1NomeDaCidade, carta1Valor);
+        printf("%s: %lu e %lu (Vencedor: '%s'; Valor: %lu)\n", propriedadeNome, carta1Valor, carta2Valor, carta1NomeDaCidade, carta1Valor);
     }
     else if (carta2Valor > carta1Valor) {
-        printf("%s: %lu e %lu (Vencedor: '%s'; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta2NomeDaCidade, carta2Valor);
+        printf("%s: %lu e %lu (Vencedor: '%s'; Valor: %lu)\n", propriedadeNome, carta1Valor, carta2Valor, carta2NomeDaCidade, carta2Valor);
     }
     else {
-        printf("%s: %lu e %lu (Vencedor: Empate; Valor: %f)\n", propriedadeNome, carta1Valor, carta2Valor, carta1Valor);
+        printf("%s: %lu e %lu (Vencedor: Empate; Valor: %lu)\n", propriedadeNome, carta1Valor, carta2Valor, carta1Valor);
     }
 }
 
